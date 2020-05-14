@@ -1,7 +1,7 @@
 const enhancer = require('./enhancer.js');
 
 describe('enhancer tests', () => {
-  let item1, itemm2, item3, item4;
+  let item1, item2, item3, item4, item5;
 
   beforeEach(() => {
     item1 = {
@@ -23,6 +23,11 @@ describe('enhancer tests', () => {
       name: 'armour',
       enhancement: 20,
       durability: 100,
+    };
+    item5 = {
+      name: 'air',
+      enhancement: 0,
+      durability: 0,
     };
   });
 
@@ -95,6 +100,7 @@ describe('enhancer tests', () => {
   //STRETCH
   it('returns object when get(item) is called', () => {
     const newItem = enhancer.get(item1);
+
     expect(newItem).toEqual(item1);
 
     const newItem2 = enhancer.get(item2);
@@ -103,5 +109,9 @@ describe('enhancer tests', () => {
 
     //returns new item with property name and enhancement level
     expect(newItem2.name).toBe('[+10] pistol');
+
+    // item with enhancement of 0 return unchanged
+    const newItem3 = enhancer.get(item5);
+    expect(newItem3.name).toBe('air');
   });
 });
