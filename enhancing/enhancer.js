@@ -16,6 +16,18 @@ function succeed(item) {
 	}
 }
 
+// function succeed(item) {
+// 	const minEhancement = 0;
+// 	const maxEnhancement = 20;
+// 	if (item.enhancement < maxEnhancement) {
+// 		item.enhancement++;
+// 	}
+// 	if (item.enhancement < minEhancement) {
+// 		item.enhancement = 0;
+// 	}
+// 	return { ...item };
+// }
+
 /**
    * If the item's enhancement is less than 15, the durability of the item is decreased by 5.
 - If the item's enhancement is 15 or more, the durability of the item is decreased by 10.
